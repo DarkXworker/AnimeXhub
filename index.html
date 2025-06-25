@@ -3,75 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Hub</title>
+  <title>AnimeXhub</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #0b0c10; color: #fff; }
-    header { background-color: #1f2833; padding: 20px; text-align: center; font-size: 24px; }
-    .hero {
-      background-image: url('banner.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 250px;
+    body { margin: 0; font-family: 'Arial', sans-serif; background: #0b0c10; color: white; }
+    header {
+      padding: 15px 20px;
+      background: #1f2833;
+      font-size: 24px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #66fcf1;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      padding: 20px;
+    .search-box {
+      background: #20232a;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      width: 200px;
+    }
+    .section { margin: 20px; }
+    .section h2 { margin-left: 10px; font-size: 20px; color: #66fcf1; }
+    .scroll-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px;
     }
     .card {
+      min-width: 140px;
       background: #1f2833;
       border-radius: 8px;
       overflow: hidden;
       cursor: pointer;
-      transition: transform 0.2s;
     }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
-      width: 100%;
-      display: block;
-    }
+    .card img { width: 100%; display: block; }
     .card-title {
-      padding: 10px;
+      padding: 8px;
       text-align: center;
       font-size: 14px;
+      color: white;
     }
-    @media(max-width: 768px) {
-      .hero { height: 180px; font-size: 1.5rem; }
-      header { font-size: 20px; }
+    .suggestions {
+      background: #1f2833;
+      position: absolute;
+      margin-top: 5px;
+      z-index: 1000;
+      border-radius: 4px;
+      overflow: hidden;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .suggestions div {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .suggestions div:hover {
+      background: #45a29e;
     }
   </style>
 </head>
 <body>
-  <header>🎬 Anime x Hub</header>
-  <div class="hero">Team Uniqe harican</div>
-
-  <div class="grid">
-    <!-- Card 1 -->
-    <div class="card" onclick="window.location='anime1.html'">
-      <img src="https://graph.org/file/5116f29aa972c53e19c61-d99c695fa7579b4cc0.jpg" alt="Jujutsu Kaisen">
-      <div class="card-title">Jujutsu Kaisen</div>
+  <header>
+    AnimeXhub
+    <div>
+      <input type="text" id="search" class="search-box" placeholder="Search anime...">
+      <div id="suggestions" class="suggestions"></div>
     </div>
+  </header>
 
-    <!-- Card 2 -->
-    <div class="card" onclick="window.location='anime2.html'">
-      <img src="poster2.jpg" alt="Anime 2">
-      <div class="card-title">Anime Title 2</div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card" onclick="window.location='anime3.html'">
-      <img src="poster3.jpg" alt="Anime 3">
-      <div class="card-title">Anime Title 3</div>
+  <div class="section">
+    <h2>🔥 Popular</h2>
+    <div class="scroll-row" id="popular">
+      <!-- Cards inserted by JS -->
     </div>
   </div>
+
+  <div class="section">
+    <h2>🆕 Recent Release</h2>
+    <div class="scroll-row" id="recent">
+      <!-- Cards inserted by JS -->
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📺 Continue Watching</h2>
+    <div class="scroll-row" id="continue">
+      <!-- Cards inserted by JS -->
+    </div>
+  </div>
+
+  <script>
+    const posters = [
+      { title: "Jujutsu Kaisen", img: "https://graph.org/file/5116f29aa972c53e19c61-d99c695fa7579b4cc0.jpg", page: "anime1.html", category: "popular" },
+      { title: "Naruto", img: "https://graph.org/file/5b5e13.jpg", page: "anime2.html", category: "popular" },
+      { title: "Bleach", img: "https://graph.org/file/6c4d78.jpg", page: "anime3.html", category: "recent" },
+      { title: "One Piece", img: "https://graph.org/file/7a8f89.jpg", page: "anime4.html", category: "popular" },
+      { title: "Demon Slayer", img: "https://graph.org/file/8d21b5.jpg", page: "anime5.html", category: "recent" },
+      { title: "Attack on Titan", img: "https://graph.org/file/9e83b2.jpg", page: "anime6.html", category: "continue" },
+      { title: "Tokyo Revengers", img: "https://graph.org/file/10f6ab.jpg", page: "anime7.html", category: "continue" }
+    ];
+
+    const sections = { popular: document.getElementById("popular"), recent: document.getElementById("recent"), continue: document.getElementById("continue") };
+
+    posters.forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.onclick = () => window.location = anime.page;
+      card.innerHTML = `<img src="${anime.img}" alt="${anime.title}"><div class="card-title">${anime.title}</div>`;
+      sections[anime.category].appendChild(card);
+    });
+
+    const searchInput = document.getElementById("search");
+    const suggestionBox = document.getElementById("suggestions");
+
+    searchInput.addEventListener("input", () => {
+      const val = searchInput.value.toLowerCase();
+      suggestionBox.innerHTML = "";
+      if (val.length > 0) {
+        const filtered = posters.filter(p => p.title.toLowerCase().startsWith(val));
+        filtered.forEach(p => {
+          const div = document.createElement("div");
+          div.textContent = p.title;
+          div.onclick = () => window.location = p.page;
+          suggestionBox.appendChild(div);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
