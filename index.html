@@ -29,15 +29,19 @@
       overflow-x: auto;
       gap: 10px;
       padding: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
     .card {
-      min-width: 140px;
+      flex: 0 0 auto;
+      width: 150px;
       background: #1f2833;
       border-radius: 8px;
       overflow: hidden;
       cursor: pointer;
+      scroll-snap-align: start;
     }
-    .card img { width: 100%; display: block; }
+    .card img { width: 100%; height: 200px; object-fit: cover; display: block; }
     .card-title {
       padding: 8px;
       text-align: center;
@@ -74,37 +78,43 @@
 
   <div class="section">
     <h2>🔥 Popular</h2>
-    <div class="scroll-row" id="popular">
-      <!-- Cards inserted by JS -->
-    </div>
+    <div class="scroll-row" id="popular"></div>
   </div>
 
   <div class="section">
     <h2>🆕 Recent Release</h2>
-    <div class="scroll-row" id="recent">
-      <!-- Cards inserted by JS -->
-    </div>
+    <div class="scroll-row" id="recent"></div>
   </div>
 
   <div class="section">
     <h2>📺 Continue Watching</h2>
-    <div class="scroll-row" id="continue">
-      <!-- Cards inserted by JS -->
-    </div>
+    <div class="scroll-row" id="continue"></div>
+  </div>
+
+  <div class="section">
+    <h2>💖 Love Story</h2>
+    <div class="scroll-row" id="love"></div>
   </div>
 
   <script>
     const posters = [
-      { title: "Jujutsu Kaisen", img: "https://files.catbox.moe/ig955o.jpg", page: "anime1.html", category: "popular" },
+      { title: "Jujutsu Kaisen", img: "https://graph.org/file/5116f29aa972c53e19c61-d99c695fa7579b4cc0.jpg", page: "anime1.html", category: "popular" },
       { title: "Naruto", img: "https://graph.org/file/5b5e13.jpg", page: "anime2.html", category: "popular" },
       { title: "Bleach", img: "https://graph.org/file/6c4d78.jpg", page: "anime3.html", category: "recent" },
       { title: "One Piece", img: "https://graph.org/file/7a8f89.jpg", page: "anime4.html", category: "popular" },
       { title: "Demon Slayer", img: "https://graph.org/file/8d21b5.jpg", page: "anime5.html", category: "recent" },
       { title: "Attack on Titan", img: "https://graph.org/file/9e83b2.jpg", page: "anime6.html", category: "continue" },
-      { title: "Tokyo Revengers", img: "https://graph.org/file/10f6ab.jpg", page: "anime7.html", category: "continue" }
+      { title: "Tokyo Revengers", img: "https://graph.org/file/10f6ab.jpg", page: "anime7.html", category: "continue" },
+      { title: "Your Name", img: "https://graph.org/file/yourname.jpg", page: "anime8.html", category: "love" },
+      { title: "A Silent Voice", img: "https://graph.org/file/silentvoice.jpg", page: "anime9.html", category: "love" }
     ];
 
-    const sections = { popular: document.getElementById("popular"), recent: document.getElementById("recent"), continue: document.getElementById("continue") };
+    const sections = {
+      popular: document.getElementById("popular"),
+      recent: document.getElementById("recent"),
+      continue: document.getElementById("continue"),
+      love: document.getElementById("love")
+    };
 
     posters.forEach(anime => {
       const card = document.createElement("div");
