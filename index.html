@@ -4,19 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AnimeX TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #0b0c10;
-      color: white;
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Poppins', sans-serif;
+      background: #0b0c1f;
+      color: #f5f5f5;
     }
 
     header {
       padding: 15px 20px;
-      background: #1f2833;
-      font-size: 20px;
+      background: linear-gradient(to right, #0f0c29, #302b63);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -24,171 +27,120 @@
     }
 
     .logo-title {
-      font-weight: bold;
-      font-size: 22px;
+      font-weight: 600;
+      font-size: 24px;
+      color: #66fcf1;
     }
 
     .header-right {
       display: flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    .mode-toggle {
-      width: 38px;
-      height: 22px;
-      background: #2c3e50;
-      border-radius: 15px;
-      position: relative;
-      cursor: pointer;
-      padding: 1px;
-      display: flex;
-      align-items: center;
-      transition: background 0.3s;
-    }
-
-    .mode-toggle .icon {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: white;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s;
-    }
-
-    body.light-mode .mode-toggle .icon {
-      transform: translateX(16px);
+      gap: 12px;
     }
 
     .search-box {
-      background: #20232a;
-      border: none;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 5px;
-      width: 160px;
-      font-size: 14px;
-    }
-
-    .section {
-      margin: 20px;
-    }
-
-    .section h2 {
-      margin-left: 10px;
-      font-size: 20px;
-      color: #66fcf1;
-    }
-
-    body.light-mode .section h2 {
-      color: #111;
-    }
-
-    .scroll-row {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding: 10px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .card {
-      flex: 0 0 auto;
-      width: 150px;
-      background: #1f2833;
+      background: #1c1f2b;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 8px 12px;
       border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      scroll-snap-align: start;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-title {
-      padding: 8px;
-      text-align: center;
       font-size: 14px;
-      color: white;
-    }
-
-    body.light-mode {
-      background: #f0f0f0;
-      color: #222;
-    }
-
-    body.light-mode header,
-    body.light-mode .suggestions {
-      background: #dcdcdc;
-      color: #111;
-    }
-
-    body.light-mode .search-box {
-      background: white;
-      color: black;
-    }
-
-    body.light-mode .card {
-      background: #fff;
-      color: black;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      border: 1px solid #ccc;
-    }
-
-    body.light-mode .card-title {
-      color: #111;
-    }
-
-    body.light-mode .card:hover {
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 180px;
     }
 
     .suggestions {
-      background: #1f2833;
       position: absolute;
-      margin-top: 5px;
-      z-index: 1000;
-      border-radius: 4px;
+      top: 100%;
+      left: 0;
+      background: #1f2833;
+      border-radius: 6px;
       overflow: hidden;
+      z-index: 10;
+      width: 180px;
       max-height: 200px;
       overflow-y: auto;
     }
 
     .suggestions div {
-      padding: 8px 12px;
+      padding: 10px;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
     .suggestions div:hover {
       background: #45a29e;
     }
 
-    body.light-mode .suggestions div:hover {
-      background: #ccc;
+    .section {
+      margin: 25px 20px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #66fcf1;
+    }
+
+    .scroll-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .card {
+      flex: 0 0 auto;
+      width: 150px;
+      background: #1f2833;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 12px rgba(102, 252, 241, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      padding: 10px;
+      font-size: 14px;
+      text-align: center;
+      color: #f1f1f1;
     }
 
     .powered {
-      color: #66fcf1;
-      font-size: 15px;
-      margin-top: 40px;
       text-align: center;
+      color: #66fcf1;
+      font-size: 14px;
+      margin: 40px 0 10px;
     }
 
     footer {
       text-align: center;
-      padding: 20px 10px 5px;
       color: #888;
-      font-size: 14px;
+      font-size: 13px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      .suggestions {
+        left: 10px;
+        right: 10px;
+        width: auto;
+      }
+
+      .header-right {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -197,31 +149,28 @@
     <div class="logo-title">AnimeX TV</div>
     <div class="header-right">
       <input type="text" id="search" class="search-box" placeholder="Search anime..." />
-      <div class="mode-toggle" id="modeToggle">
-        <div class="icon" id="toggleIcon">🌙</div>
-      </div>
     </div>
     <div id="suggestions" class="suggestions"></div>
   </header>
 
   <div class="section">
-    <h2>Most Popular Anime</h2>
+    <h2> Most Popular Anime</h2>
     <div class="scroll-row" id="popular"></div>
   </div>
 
   <div class="section">
-    <h2>Romantic anime story</h2>
-    <div class="scroll-row" id="recent"></div>
+    <h2> Romantic Anime Story</h2>
+    <div class="scroll-row" id="romantic"></div>
   </div>
 
   <div class="section">
-    <h2>All in Onw</h2>
-    <div class="scroll-row" id="continue"></div>
+    <h2> All in One</h2>
+    <div class="scroll-row" id="aio"></div>
   </div>
 
   <div class="section">
-    <h2>Adult Anime </h2>
-    <div class="scroll-row" id="love"></div>
+    <h2> Adult Anime</h2>
+    <div class="scroll-row" id="adlt"></div>
   </div>
 
   <div class="powered">Powered by UNIQUE TEAM</div>
@@ -232,21 +181,21 @@
       { title: "Jujutsu Kaisen", img: "https://files.catbox.moe/ig955o.jpg", page: "JujutsuKaisen.html", category: "popular" },
       { title: "Attack on Titan", img: "https://files.catbox.moe/mmcutw.jpg", page: "Aot.html", category: "popular" },
       { title: "Demon Slayer", img: "https://files.catbox.moe/z5lzcv.jpg", page: "demon.html", category: "popular" },
-      { title: "Bleach", img: "https://graph.org/file/6c4d78.jpg", page: "anime3.html", category: "recent" },
+      { title: "Bleach", img: "https://graph.org/file/6c4d78.jpg", page: "anime3.html", category: "romantic" },
       { title: "Solo Leveling", img: "https://files.catbox.moe/rst50t.jpg", page: "solo.html", category: "popular" },
       { title: "Naruto Shippuden", img: "https://files.catbox.moe/6qorov.jpg", page: "naru.html", category: "popular" },
-      { title: "Demon Slayer", img: "https://graph.org/file/8d21b5.jpg", page: "anime5.html", category: "recent" },
-      { title: "Attack on Titan", img: "https://graph.org/file/9e83b2.jpg", page: "anime6.html", category: "continue" },
-      { title: "Tokyo Revengers", img: "https://graph.org/file/10f6ab.jpg", page: "anime7.html", category: "continue" },
-      { title: "Your Name", img: "https://graph.org/file/yourname.jpg", page: "anime8.html", category: "love" },
-      { title: "A Silent Voice", img: "https://graph.org/file/silentvoice.jpg", page: "anime9.html", category: "love" }
+      { title: "Demon Slayer", img: "https://graph.org/file/8d21b5.jpg", page: "anime5.html", category: "adlt" },
+      { title: "Attack on Titan", img: "https://graph.org/file/9e83b2.jpg", page: "anime6.html", category: "aio" },
+      { title: "Tokyo Revengers", img: "https://graph.org/file/10f6ab.jpg", page: "anime7.html", category: "aio" },
+      { title: "Your Name", img: "https://graph.org/file/yourname.jpg", page: "anime8.html", category: "adlt" },
+      { title: "A Silent Voice", img: "https://graph.org/file/silentvoice.jpg", page: "anime9.html", category: "adlt" }
     ];
 
     const sections = {
       popular: document.getElementById("popular"),
-      recent: document.getElementById("recent"),
-      continue: document.getElementById("continue"),
-      love: document.getElementById("love")
+      romantic: document.getElementById("romantic"),
+      aio: document.getElementById("aio"),
+      adlt: document.getElementById("adlt")
     };
 
     posters.forEach(anime => {
@@ -254,7 +203,9 @@
       card.className = "card";
       card.onclick = () => window.location = anime.page;
       card.innerHTML = `<img src="${anime.img}" alt="${anime.title}"><div class="card-title">${anime.title}</div>`;
-      sections[anime.category].appendChild(card);
+      if (sections[anime.category]) {
+        sections[anime.category].appendChild(card);
+      }
     });
 
     const searchInput = document.getElementById("search");
@@ -264,7 +215,7 @@
       const val = searchInput.value.toLowerCase();
       suggestionBox.innerHTML = "";
       if (val.length > 0) {
-        const filtered = posters.filter(p => p.title.toLowerCase().startsWith(val));
+        const filtered = posters.filter(p => p.title.toLowerCase().includes(val));
         filtered.forEach(p => {
           const div = document.createElement("div");
           div.textContent = p.title;
@@ -272,14 +223,6 @@
           suggestionBox.appendChild(div);
         });
       }
-    });
-
-    const modeToggle = document.getElementById("modeToggle");
-    const toggleIcon = document.getElementById("toggleIcon");
-
-    modeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      toggleIcon.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
     });
   </script>
 </body>
