@@ -3,93 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Solo Leveling - AnimeXhub</title>
+  <title>Solo Leveling – AnimeX TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0c10;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    .poster {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 10px;
-    }
-    h1 {
-      margin-top: 20px;
-    }
-    .btn {
-      display: block;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      margin: 10px auto;
-      width: 250px;
-      transition: 0.3s;
-    }
-    .btn.red { background-color: #dc2626; }
-    .btn.red:hover { background-color: #b91c1c; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .btn.green { background-color: #22c55e; }
-    .btn.green:hover { background-color: #16a34a; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0c1f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .banner {
+      background: url('https://files.catbox.moe/15yjbt.jpg') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.4) 70%);
+      z-index: 1;
+    }
 
     .content {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
+      z-index: 2;
+      padding: 30px 20px;
+      text-align: center;
+      max-width: 800px;
     }
 
-    h2 {
-      margin-top: 30px;
+    .anime-title {
+      font-size: 32px;
+      font-weight: 600;
       color: #66fcf1;
+    }
+
+    .details {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    .rating {
+      margin: 5px 0 20px;
+      font-size: 16px;
+      color: #f1c40f;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .buttons a {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .download {
+      background: #e67e22;
+      color: #fff;
+    }
+
+    .download:hover {
+      background: #d35400;
+    }
+
+    .howto {
+      background: #2ecc71;
+      color: #fff;
+    }
+
+    .howto:hover {
+      background: #27ae60;
+    }
+
+    .story-section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .story-section h2 {
+      color: #66fcf1;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .story-section p {
+      font-size: 16px;
+      color: #ddd;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .banner {
+        height: 80vh;
+        align-items: flex-end;
+      }
+
+      .anime-title {
+        font-size: 24px;
+      }
+
+      .content {
+        margin-bottom: 30px;
+      }
+
+      .story-section h2 {
+        font-size: 20px;
+      }
+
+      .story-section p {
+        font-size: 15px;
+      }
+
+      .buttons a {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <img src="https://files.catbox.moe/rst50t.jpg" alt="Solo Leveling" class="poster" />
-
-  <h1>Solo Leveling</h1>
-
-  <div class="content">
-    <p style="white-space: pre-line;">
-⭐ Solo Leveling (나 혼자만 레벨업) – Complete Anime Description in English
-
-Genre: Action, Fantasy, Supernatural, Modern Magic, Adventure  
-Episodes:  
-- Season 1 (12 Episodes)  
-Status: Season 2 Confirmed (Coming Soon)  
-Languages Available: Japanese (Sub), Hindi Dub, English Dub
-    </p>
-
-    <!-- 🟥 Season Button -->
-    <a href="https://t.me/YourSeason1Link" target="_blank" class="btn red">📺 Season 1 – All Ep Hindi</a>
-
-    <!-- 🟩 Download Button -->
-    <a href="#how-to-download" class="btn green">⬇ How to Download</a>
-
-    <h2>📖 Story Overview:</h2>
-
-    <p style="white-space: pre-line;">
-In a world where mysterious gates connect Earth to dangerous dungeons filled with monsters, certain humans awaken supernatural powers and become Hunters.
-
-Sung Jin-Woo is known as the “World’s Weakest Hunter.” Constantly risking his life in low-level dungeons for money, everything changes when he gets trapped in a deadly double dungeon — and is chosen by a hidden system to become a Player with the unique ability to level up… endlessly.
-
-From a fragile and powerless boy to the world’s strongest hunter, Solo Leveling follows Jin-Woo’s rise as he battles monsters, uncovers ancient secrets, and confronts powerful enemies — both human and non-human.
-    </p>
-
-    <h2 id="how-to-download">⬇ How to Download</h2>
-    <p>
-1. Tap on the “Season 1 – All Ep Hindi” button above<br>
-2. It will open the episode list in the Telegram App<br>
-3. Tap on any video → Hold → “Save to Gallery” or “Download”
-    </p>
+  <div class="banner">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="anime-title">Solo Leveling</h1>
+      <div class="details">📺 Sub | Dub · Action, Fantasy, Supernatural</div>
+      <div class="rating">⭐ 8.67/10 (Based on 700K+ votes – MyAnimeList)</div>
+      <div class="buttons">
+        <a class="download" href="#">📥 Download All Episodes (Hindi)</a>
+        <a class="howto" href="#">📘 How to Download</a>
+      </div>
+    </div>
   </div>
+
+  <section class="story-section">
+    <h2>📖 Story Overview</h2>
+    <p>
+      In a world where mysterious gates connect Earth to dangerous dungeons filled with monsters,
+      some humans awaken powers and become Hunters. Sung Jin-Woo, the weakest, suddenly gains access
+      to a leveling system that lets him grow stronger—faster than anyone else. Watch his epic journey
+      from zero to unstoppable.
+    </p>
+  </section>
+
+  <footer>© 2025 AnimeX TV | Designed by SudipX</footer>
 
 </body>
 </html>
