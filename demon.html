@@ -2,102 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Demon Slayer - AnimeXhub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demon Slayer - AnimeX TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0c10;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
       color: #fff;
-      padding: 20px;
+      background: url('https://files.catbox.moe/83fy97.png') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .content {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+      padding: 40px 20px;
       text-align: center;
     }
-    .poster {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 10px;
-    }
     h1 {
-      margin-top: 20px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #66fcf1;
+      margin-bottom: 10px;
+    }
+    .sub-info {
+      font-size: 14px;
+      color: #ddd;
+      margin-bottom: 6px;
+    }
+    .rating {
+      color: gold;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 25px;
     }
     .btn {
-      display: block;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      margin: 10px auto;
-      width: 280px;
-      transition: 0.3s;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .btn.red { background-color: #dc2626; }
-    .btn.red:hover { background-color: #b91c1c; }
-
-    .btn.green { background-color: #22c55e; }
-    .btn.green:hover { background-color: #16a34a; }
-
-    .content {
-      max-width: 600px;
+    .btn.download {
+      background: #ffa500;
+      color: #000;
+    }
+    .btn.download:hover {
+      background: #ffcc66;
+    }
+    .btn.tutorial {
+      background: #ff4d6d;
+      color: #fff;
+    }
+    .btn.tutorial:hover {
+      background: #ff8099;
+    }
+    .story {
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 720px;
       margin: 0 auto;
-      text-align: left;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
     }
-
-    h2 {
-      margin-top: 30px;
-      color: #66fcf1;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+      .story {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <img src="https://files.catbox.moe/z5lzcv.jpg" alt="Demon Slayer" class="poster" />
-
-  <h1>Demon Slayer</h1>
-
   <div class="content">
-    <p style="white-space: pre-line;">
-⭐ Demon Slayer (鬼滅の刃) – Complete Anime Description in English
+    <h1>Demon Slayer: Kimetsu no Yaiba</h1>
+    <div class="sub-info">
+      📺 Sub | Dub · Adventure, Dark Fantasy, Martial Arts, Supernatural
+    </div>
+    <div class="rating">⭐ 8.8/10 (Based on Google User Ratings)</div>
 
-Genre: Action, Supernatural, Historical, Dark Fantasy, Drama  
-Episodes:  
-- Season 1: 26 Episodes (Tanjiro Kamado, Unwavering Resolve Arc)  
-- Mugen Train Arc: 7 Episodes (also a movie)  
-- Entertainment District Arc: 11 Episodes  
-- Swordsmith Village Arc: 11 Episodes  
-- Hashira Training Arc: Ongoing  
-Status: Ongoing  
-Languages Available: Japanese (Sub), Hindi Dub, English Dub
-    </p>
+    <div class="btn-group">
+      <a href="https://example.com/demon-slayer-download" class="btn download">
+        📂 Download All Episodes (Hindi)
+      </a>
+      <a href="https://example.com/how-to-download" class="btn tutorial">
+        ❓ How to Download
+      </a>
+    </div>
 
-    <!-- 🟥 Arc Buttons -->
-    <a href="https://t.me/YourSeason1Link" target="_blank" class="btn red">📺 Season 1 – All Ep Hindi</a>
-    <a href="https://t.me/YourMugenTrainLink" target="_blank" class="btn red">🔥 Mugen Train Arc – Hindi</a>
-    <a href="https://t.me/YourEntertainmentLink" target="_blank" class="btn red">🎭 Entertainment District – Hindi</a>
-    <a href="https://t.me/YourSwordsmithLink" target="_blank" class="btn red">⚔ Swordsmith Village – Hindi</a>
-    <a href="https://t.me/YourHashiraLink" target="_blank" class="btn red">💥 Hashira Training Arc – Hindi</a>
-
-    <!-- 🟩 Download Button -->
-    <a href="#how-to-download" class="btn green">⬇ How to Download</a>
-
-    <h2>📖 Story Overview:</h2>
-
-    <p style="white-space: pre-line;">
-Demon Slayer: Kimetsu no Yaiba follows Tanjiro Kamado, a kind-hearted boy who returns home one day to find his entire family slaughtered by demons — except for his younger sister Nezuko, who’s turned into a demon herself.
-
-Determined to avenge his family and find a cure for Nezuko, Tanjiro joins the secretive Demon Slayer Corps — a group of elite swordsmen trained to hunt and kill demons using powerful breathing techniques and specialized blades.
-
-As Tanjiro trains, he meets allies like Zenitsu, Inosuke, and the powerful Hashira warriors — facing off against terrifying demons created by the mysterious Muzan Kibutsuji, the first and strongest demon of all time.
-    </p>
-
-    <h2 id="how-to-download">⬇ How to Download</h2>
-    <p>
-1. Tap on any arc/season button above<br>
-2. It will open the episode list in the Telegram App<br>
-3. Choose video → Long press → Tap “Save to Gallery” or “Download”
-    </p>
+    <div class="story">
+      Set in Taishō-era Japan, teenage Tanjiro Kamado returns home to find his family slaughtered by demons and his sister Nezuko transformed into one. Driven by love and vengeance, he joins the Demon Slayer Corps to avenge his kin and cure his sister. Alongside allies like Zenitsu and Inosuke, Tanjiro battles powerful demons, uncovers their tragic pasts, and fights the demonic king Muzan. Rich in stunning animation, emotional depth, and moral complexity, the series explores themes of sacrifice, resilience, and empathy—even extending compassion to even the villains haunted by sorrowful origins. :contentReference[oaicite:1]{index=1}
+    </div>
   </div>
-
 </body>
 </html>
