@@ -2,93 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jujutsu Kaisen - AnimeXhub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jujutsu Kaisen - AnimeX TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0c10;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
       color: #fff;
-      padding: 20px;
-      text-align: center;
+      background: url('https://files.catbox.moe/ob5oj0.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
-    .poster {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 10px;
-    }
-    h1 {
-      margin-top: 20px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      margin: 10px 10px 20px;
-      transition: 0.3s;
-    }
-    .btn.orange { background-color: #f97316; }
-    .btn.orange:hover { background-color: #ea580c; }
-    .btn.green { background-color: #22c55e; }
-    .btn.green:hover { background-color: #16a34a; }
 
     .content {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    h2 {
-      margin-top: 30px;
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
       color: #66fcf1;
+      margin-bottom: 10px;
+    }
+
+    .sub-info {
+      font-size: 14px;
+      color: #ddd;
+      margin-bottom: 6px;
+    }
+
+    .rating {
+      color: gold;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn.download {
+      background: #ffa500;
+      color: #000;
+    }
+
+    .btn.download:hover {
+      background: #ffcc66;
+    }
+
+    .btn.tutorial {
+      background: #ff4d6d;
+      color: #fff;
+    }
+
+    .btn.tutorial:hover {
+      background: #ff8099;
+    }
+
+    .story {
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .story {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <img src="https://files.catbox.moe/ig955o.jpg" alt="Jujutsu Kaisen" class="poster" />
-
-  <h1>Jujutsu Kaisen</h1>
-
   <div class="content">
-    <p style="white-space: pre-line;">
-⭐ Jujutsu Kaisen (呪術廻戦) – Complete Anime Description in English
-
-Genre: Action, Supernatural, Dark Fantasy, Shounen  
-Episodes:  
-- Season 1 (24 Episodes)  
-- Season 2 (23 Episodes)  
-- Movie: Jujutsu Kaisen 0  
-Status: Ongoing  
-Languages Available: Japanese (Sub), Hindi Dub, English Dub
-    </p>
-
-    <!-- 🔼 GREEN BUTTON FIRST -->
-    <a href="#how-to-download" class="btn green">⬇ How to Download</a>
-    <!-- 🔽 ORANGE BUTTON BELOW -->
-    <a href="https://t.me/YourTelegramLinkHere" target="_blank" class="btn orange">▶ Watch on Telegram</a>
-
-    <h2>📖 Story Overview:</h2>
-
-    <p style="white-space: pre-line;">
-Jujutsu Kaisen follows Yuji Itadori, a kind-hearted high school student who becomes involved in the world of jujutsu sorcerers after consuming a cursed object — a rotten finger belonging to the legendary Curse, Ryomen Sukuna.
-
-Now, with Sukuna's soul living inside him, Yuji is taken in by Tokyo Jujutsu High, where he learns to fight curses — monstrous beings born from human negative emotions.
-
-Alongside powerful allies like Megumi Fushiguro, Nobara Kugisaki, and his mentor Satoru Gojo, Yuji enters a dangerous battle between humanity and the supernatural.
-    </p>
-
-    <h2 id="how-to-download">⬇ How to Download</h2>
-    <p>
-1. Click the “▶ Watch on Telegram” button above<br>
-2. It will open the episode or movie in the Telegram App<br>
-3. Press and hold the video → Tap “Save to Gallery”
-    </p>
+    <h1>Jujutsu Kaisen</h1>
+    <div class="sub-info">📺 Sub | Dub · Action, Dark Fantasy, Supernatural, Horror</div>
+    <div class="rating">⭐ 8.8/10 (Based on Google User Ratings)</div>
+    <div class="btn-group">
+      <a href="https://example.com/jujutsu-kaisen-download" class="btn download">📂 Download All Episodes (Hindi)</a>
+      <a href="https://example.com/how-to-download" class="btn tutorial">❓ How to Download</a>
+    </div>
+    <div class="story">
+      In a world where cursed spirits feed on innocent humans, fragments of a legendary and dangerous curse—Ryomen Sukuna—were lost and scattered. If any curse consumes Sukuna’s body parts, their power will grow beyond belief. To prevent this, a high schooler named Yuji Itadori swallows one of Sukuna’s cursed fingers—becoming the host of the King of Curses. Now, he joins Jujutsu High to fight these curses and save the world from supernatural threats.
+    </div>
   </div>
-
 </body>
 </html>
