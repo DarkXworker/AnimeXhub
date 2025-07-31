@@ -1118,5 +1118,30 @@
       window.location = 'index.html';
     });
   </script>
+<!-- 👇 Bottom Navigation (Native Style) 👇 -->
+<div class="bottom-nav" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1f2833; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-around; align-items: center; padding: 0.5rem 0; z-index: 9999;">
+  <a href="#" onclick="scrollToSection('popular')" style="text-align: center; color: white; font-size: 0.85rem; flex: 1; text-decoration: none;">
+    <i class="fas fa-home" style="display: block; font-size: 1.2rem;"></i>Home
+  </a>
+  <a href="#" onclick="scrollToSection('popular')" style="text-align: center; color: white; font-size: 0.85rem; flex: 1; text-decoration: none;">
+    <i class="fas fa-fire" style="display: block; font-size: 1.2rem;"></i>Popular
+  </a>
+  <a href="#" onclick="scrollToSection('romantic')" style="text-align: center; color: white; font-size: 0.85rem; flex: 1; text-decoration: none;">
+    <i class="fas fa-heart" style="display: block; font-size: 1.2rem;"></i>Romantic
+  </a>
+  <a href="#" onclick="scrollToSection('adlt')" style="text-align: center; color: white; font-size: 0.85rem; flex: 1; text-decoration: none;">
+    <i class="fas fa-lock" style="display: block; font-size: 1.2rem;"></i>18+
+  </a>
+</div>
+
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+
 </body>
 </html>
