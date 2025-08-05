@@ -1099,7 +1099,119 @@
 
 
 <!-- 👇 Bottom Navigation (Native Style) 👇 -->
+<!-- Add this just before the closing </body> tag -->
+<div class="bottom-nav">
+  <div class="nav-item" onclick="filterAnime('popular')">
+    <i class="fas fa-fire"></i>
+    <span>Popular</span>
+  </div>
+  <div class="nav-item" onclick="filterAnime('romantic')">
+    <i class="fas fa-heart"></i>
+    <span>Romantic</span>
+  </div>
+  <div class="nav-item" onclick="filterAnime('aio')">
+    <i class="fas fa-th-large"></i>
+    <span>All</span>
+  </div>
+  <div class="nav-item" onclick="filterAnime('adlt')">
+    <i class="fas fa-exclamation-circle"></i>
+    <span>Adult</span>
+  </div>
+</div>
 
+<style>
+  /* Bottom Navigation Styles */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 90;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--gray);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .nav-item:hover, .nav-item.active {
+    color: var(--primary);
+    background: rgba(102, 252, 241, 0.1);
+  }
+  
+  .nav-item.active {
+    transform: translateY(-5px);
+  }
+  
+  @media (min-width: 769px) {
+    .bottom-nav {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Add this to your existing script
+  function filterAnime(category) {
+    // Hide all sections first
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.display = 'none';
+    });
+    
+    // Show only the selected category
+    if (category === 'popular') {
+      document.querySelectorAll('.section')[0].style.display = 'block';
+      scrollToSection('popular');
+    } else if (category === 'romantic') {
+      document.querySelectorAll('.section')[1].style.display = 'block';
+      scrollToSection('romantic');
+    } else if (category === 'aio') {
+      document.querySelectorAll('.section')[2].style.display = 'block';
+      scrollToSection('aio');
+    } else if (category === 'adlt') {
+      document.querySelectorAll('.section')[3].style.display = 'block';
+      scrollToSection('adlt');
+    }
+    
+    // Update active state
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+  }
+  
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  // Initialize with Popular selected on mobile
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.section').forEach((section, index) => {
+      if (index !== 0) section.style.display = 'none';
+    });
+    document.querySelectorAll('.nav-item')[0].classList.add('active');
+  }
+</script>
 
 </body>
 </html>
