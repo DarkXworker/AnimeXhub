@@ -644,7 +644,16 @@
     </div>
 
     <div class="powered">Powered by UNIQUE TEAM</div>
-  </div>
+
+  <footer style="text-align:center; padding: 20px; font-size: 13px; color: #777; background-color: #111;">
+  © <span id="year"></span> <strong>SudipX</strong>. All Rights Reserved. Made for Anime Lovers 💫
+</footer>
+
+<script>
+  // Year auto update
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 
   
   <!-- Age Verification Modal -->
@@ -714,7 +723,7 @@
         title: "Let This Grieving Soul Retire!", 
         img: "https://i.ibb.co/21TxGYYN/photo-2025-07-03-19-32-55-Let.jpg", 
         page: "ltgsr.html", 
-        category: ["popular", "aio"],
+        category: "popular",
         rating: 4.9,
         year: 2024,
         badge: "HOT"
@@ -723,7 +732,7 @@
   title: "Aharen Is Indecipherable",
   img: "https://files.catbox.moe/4rd3d5.jpg",
   page: "aiin.html",
-  category: "comedy",
+  category: "aio",
   rating: 7.2,
   year: 2022,
   badge: "FUNNY"
