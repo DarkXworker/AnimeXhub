@@ -6,20 +6,59 @@
   <title>Hunter × Hunter - AnimeX TV</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* existing styles unchanged */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: url('https://files.catbox.moe/pxdj0r.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .content {
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 { font-size: 32px; font-weight: 600; color: #66fcf1; margin-bottom: 10px; }
+    .sub-info { font-size: 14px; color: #ddd; margin-bottom: 6px; }
+    .rating { color: gold; font-size: 15px; margin-bottom: 20px; }
+    .btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 25px; }
+    .btn {
+      padding: 12px 20px; border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;
+    }
+    .btn.download { background: #ffa500; color: #000; }
+    .btn.download:hover { background: #ffcc66; }
+    .btn.tutorial { background: #ff4d6d; color: #fff; }
+    .btn.tutorial:hover { background: #ff8099; }
+    .story {
+      font-size: 15px; line-height: 1.6; max-width: 720px;
+      margin: 0 auto; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px;
+    }
+    @media (max-width:600px) {
+      h1 { font-size: 26px; }
+      .story { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
   <div class="content">
     <h1>Hunter × Hunter</h1>
-    <div class="sub-info">📺 Sub | Dub · Adventure, Fantasy, Martial Arts, Psychological</div>
-    <div class="rating">⭐ 4.6/5 (Based on Google Play ratings)</div>
+    <div class="sub-info">📺 Sub | Dub · Adventure, Fantasy, Shounen</div>
+    <div class="rating">⭐ 4.8/5 (Based on MyAnimeList ratings)</div>
     <div class="btn-group">
-      <a href="https://example.com/hunter-x-hunter-download" class="btn download">📂 Download All Episodes (Hindi)</a>
-      <a href="https://example.com/how-to-download" class="btn tutorial">❓ How to Download</a>
+      <a href="https://t.me/+kMlV7ss1kXM1MTg1" class="btn download">
+        📂 Download All Episodes (Hindi)
+      </a>
+      <a href="https://t.me/download_Tutorialx" class="btn tutorial">
+        ❓ How to Download
+      </a>
     </div>
     <div class="story">
-      Gon Freecss, a spirited 12-year-old from Whale Island, discovers that his father Ging—whom he thought was dead—is alive and a legendary Hunter. Determined, Gon embarks on a journey to pass the grueling Hunter Exam, make powerful allies like Killua, Kurapika, and Leorio, and master the mystical Nen martial‑art system along the way. Their adventure thrusts them across lethal tournaments, crime‑ridden cities, and horrifying Chimera Ant threats—through every brutal battle and moral test, Gon grows into a hero worthy of his father’s legacy. From light-hearted beginnings to profound psychological depth, HXH blends strategy, emotion, and shocking twists in a masterpiece that evolves well beyond traditional shōnen storytelling.
+      Gon Freecss dreams of becoming a Hunter like his long-lost father. Setting out on a journey filled with deadly challenges, he befriends Killua, Leorio, and Kurapika, each with their own ambitions. From the brutal Hunter Exam to the dangerous Phantom Troupe and the dark Chimera Ants, Gon’s adventures test his courage, loyalty, and strength. Hunter × Hunter blends action, strategy, and deep emotional moments into one unforgettable tale.
     </div>
   </div>
 </body>
