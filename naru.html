@@ -2,93 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Naruto Shippuden - AnimeXhub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naruto Shippuden - AnimeX TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0c10;
+      font-family: 'Poppins', sans-serif;
       color: #fff;
-      padding: 20px;
+      background: url('https://files.catbox.moe/xzqulg.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .content {
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+      padding: 40px 20px;
       text-align: center;
     }
-    .poster {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 10px;
-    }
-    h1 {
-      margin-top: 20px;
-    }
+    h1 { font-size: 32px; font-weight: 600; color: #66fcf1; margin-bottom: 10px; }
+    .sub-info { font-size: 14px; color: #ddd; margin-bottom: 6px; }
+    .rating { color: gold; font-size: 15px; margin-bottom: 20px; }
+    .btn-group { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 25px; }
     .btn {
-      display: block;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      margin: 10px auto;
-      width: 280px;
-      transition: 0.3s;
+      padding: 12px 20px; border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;
     }
-    .btn.red { background-color: #dc2626; }
-    .btn.red:hover { background-color: #b91c1c; }
-
-    .btn.green { background-color: #22c55e; }
-    .btn.green:hover { background-color: #16a34a; }
-
-    .content {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
+    .btn.download { background: #ffa500; color: #000; }
+    .btn.download:hover { background: #ffcc66; }
+    .btn.tutorial { background: #ff4d6d; color: #fff; }
+    .btn.tutorial:hover { background: #ff8099; }
+    .story {
+      font-size: 15px; line-height: 1.6; max-width: 720px;
+      margin: 0 auto; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px;
     }
-
-    h2 {
-      margin-top: 30px;
-      color: #66fcf1;
+    @media (max-width:600px) {
+      h1 { font-size: 26px; }
+      .story { font-size: 14px; }
     }
   </style>
 </head>
 <body>
-
-  <img src="https://files.catbox.moe/xzqulg.jpg" alt="Naruto Shippuden" class="poster" />
-
-  <h1>Naruto Shippuden</h1>
-
   <div class="content">
-    <p style="white-space: pre-line;">
-⭐ Naruto Shippuden (ナルト- 疾風伝) – Complete Anime Description in English
-
-Genre: Action, Adventure, Martial Arts, Supernatural, Shounen  
-Episodes: 500  
-Status: Completed  
-Languages Available: Japanese (Sub), Hindi Dub, English Dub
-    </p>
-
-    <!-- 🟥 Season Download Button -->
-    <a href="https://t.me/YourNarutoLink" target="_blank" class="btn red">📺 All 500 Episodes – Hindi</a>
-
-    <!-- 🟩 How to Download Button -->
-    <a href="#how-to-download" class="btn green">⬇ How to Download</a>
-
-    <h2>📖 Story Overview:</h2>
-
-    <p style="white-space: pre-line;">
-Naruto Shippuden is the powerful continuation of the original Naruto series, following Naruto Uzumaki after a two-and-a-half-year training journey. Now stronger and more mature, Naruto returns to the Hidden Leaf Village with one mission: to bring back his best friend Sasuke Uchiha, who abandoned the village to gain power from Orochimaru.
-
-As Naruto grows, he faces increasingly dangerous enemies, including the deadly criminal organization Akatsuki, whose goal is to capture all the Tailed Beasts — including the one sealed inside Naruto himself.
-
-This saga takes you deep into the ninja world’s history, revealing the origins of chakra, the cursed fate of shinobi, and the legendary clash between Naruto and Sasuke that will determine the future of the world.
-    </p>
-
-    <h2 id="how-to-download">⬇ How to Download</h2>
-    <p>
-1. Tap the red button above to open the Telegram list  
-2. Long press any episode → Tap “Download” or “Save to Gallery”  
-3. Enjoy watching offline!
-    </p>
+    <h1>Naruto Shippuden</h1>
+    <div class="sub-info">📺 Sub | Dub · Action, Adventure, Ninja</div>
+    <div class="rating">⭐ 4.9/5 (Based on Crunchyroll ratings)</div>
+    <div class="btn-group">
+      <a href="https://telegram.me/+-0K2wozDx1AwYjVl" class="btn download">
+        📂 Download All Episodes (Hindi)
+      </a>
+      <a href="https://t.me/download_Tutorialx" class="btn tutorial">
+        ❓ How to Download
+      </a>
+    </div>
+    <div class="story">
+      After two years of training with Jiraiya, Naruto Uzumaki returns to the Hidden Leaf Village, stronger and more determined than ever. But the Akatsuki organization is on the move, hunting tailed beasts for their sinister plans. With new allies, fierce battles, and heartbreaking sacrifices, Naruto Shippuden is a journey of friendship, perseverance, and the will to never give up.
+    </div>
   </div>
-
 </body>
 </html>
