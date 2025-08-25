@@ -1,98 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>That Time I Got Reincarnated as a Slime – AnimeX TV</title>
-  <meta name="description" content="Watch & download That Time I Got Reincarnated as a Slime (Sub/Dub). Auto-filled from AniList.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>That Time I Got Reincarnated as a Slime - AnimeX TV</title>
+  <meta name="description" content="Watch & download That Time I Got Reincarnated as a Slime (Sub/Dub). Genres: Action, Adventure, Fantasy, Isekai." />
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="That Time I Got Reincarnated as a Slime - AnimeX TV" />
+  <meta property="og:description" content="Watch & download That Time I Got Reincarnated as a Slime. Genres: Action, Adventure, Fantasy, Isekai." />
+  <meta property="og:type" content="video.tv_show" />
+  <meta property="og:image" content="https://files.catbox.moe/o08zv8.jpg_large" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="That Time I Got Reincarnated as a Slime - AnimeX TV" />
+  <meta name="twitter:description" content="Watch & download That Time I Got Reincarnated as a Slime. Genres: Action, Adventure, Fantasy, Isekai." />
+  <meta name="twitter:image" content="https://files.catbox.moe/o08zv8.jpg_large" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* Same styling as your previous templates */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:url('https://files.catbox.moe/o08zv8.jpg_large');
+      --brand:#66fcf1;
+      --gold:#ffd54a;
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: var(--bg) no-repeat center center/cover;
+      min-height: 100vh; display:flex; flex-direction:column; justify-content:flex-end;
+    }
+    .content { background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0)); padding: 40px 20px; text-align:center; }
+    h1 { font-size: 32px; font-weight: 600; color: var(--brand); margin-bottom: 10px; }
+    .sub-info { font-size: 14px; color: #ddd; margin-bottom: 6px; }
+    .rating { color: var(--gold); font-size: 15px; margin: 10px 0 22px; }
+    .btn-group { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:25px; }
+    .btn { padding: 12px 20px; border:none; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; transition:.25s; display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn.download { background:#ffa500; color:#000; }
+    .btn.download:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.tutorial { background:#ff4d6d; color:#fff; }
+    .btn.tutorial:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.copy { background:#2dd4bf; color:#062; }
+    .story { font-size:15px; line-height:1.65; max-width: 760px; margin:0 auto; background:rgba(0,0,0,.7); padding:20px; border-radius:12px; text-align:left; }
+    .meta { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin: 10px 0 18px; }
+    .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; font-size:12px; }
+    footer { text-align:center; color:#bbb; font-size:12px; padding:18px 0 8px; }
+    @media (max-width:600px){ h1{font-size:26px;} .story{font-size:14px;} }
   </style>
 </head>
 <body>
   <div class="content" role="main">
     <h1 id="title">That Time I Got Reincarnated as a Slime</h1>
-    <div class="sub-info" id="subdub">📺 Sub | Dub · Auto</div>
-    <div class="meta" id="genresWrap" aria-label="Genres"></div>
-    <div class="rating" id="rating">⭐ Loading rating…</div>
+
+    <div class="sub-info" id="subdub">📺 Sub | Dub · Action, Adventure, Fantasy, Isekai</div>
+    <div class="meta" aria-label="Genres"></div>
+
+    <div class="rating" id="rating">⭐ 8.1/10 <span style="opacity:.8">(MyAnimeList)</span></div>
+
     <div class="btn-group">
-      <a href="https://t.me/+SRjrFEuxP18yNmI9" class="btn download" id="downloadBtn">📂 Download All Episodes (Hindi)</a>
-      <a href="https://t.me/download_Tutorialx/77" class="btn tutorial">❓ How to Download</a>
-      <button class="btn copy" id="copyBtn">📋 Copy Page Info</button>
+      <a href="https://t.me/+SRjrFEuxP18yNmI9" class="btn download" id="downloadBtn" rel="nofollow noopener">
+        📂 Download All Episodes (Hindi)
+      </a>
+      <a href="https://t.me/download_Tutorialx/77" class="btn tutorial" rel="nofollow noopener">
+        ❓ How to Download
+      </a>
+      <button class="btn copy" id="copyBtn" type="button">📋 Copy Page Info</button>
     </div>
-    <article class="story" id="synopsis">Fetching synopsis…</article>
+
+    <article class="story" id="synopsis">
+      Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life. But after dying at the hands of a robber, he awakens in a fantasy world—as a slime monster! Blessed with unique powers, he begins a new journey of adventure, alliances, and battles. Embracing his new identity as Rimuru Tempest, he sets out to build a world where everyone can live in peace.
+    </article>
   </div>
+
   <footer>
     <span id="footerTitle">That Time I Got Reincarnated as a Slime</span> · <span id="year"></span>
   </footer>
-  <script>
-    const $ = s => document.querySelector(s);
-    const stripHTML = h => h.replace(/<br\s*\/?>\s*/gi, '\\n').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
 
-    const CONFIG = {
+  <script type="application/ld+json" id="ldjson"></script>
+
+  <script>
+    const DATA = {
       title: 'That Time I Got Reincarnated as a Slime',
       image: 'https://files.catbox.moe/o08zv8.jpg_large',
+      subdub: '📺 Sub | Dub',
+      genres: ["Action","Adventure","Fantasy","Isekai"],
+      rating: '8.1/10',
+      ratingSource: 'MyAnimeList',
+      synopsis: `Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life. But after dying at the hands of a robber, he awakens in a fantasy world—as a slime monster! Blessed with unique powers, he begins a new journey of adventure, alliances, and battles. Embracing his new identity as Rimuru Tempest, he sets out to build a world where everyone can live in peace.`,
       download: 'https://t.me/+SRjrFEuxP18yNmI9',
-      lang: '📺 Sub | Dub',
+      tutorial: 'https://t.me/download_Tutorialx/77'
     };
 
-    document.title = CONFIG.title + ' - AnimeX TV';
-    document.documentElement.style.setProperty('--bg', `url('${CONFIG.image}')`);
-    $('#downloadBtn').href = CONFIG.download;
-    $('#subdub').textContent = CONFIG.lang + ' · Auto';
-    $('#footerTitle').textContent = CONFIG.title;
-    $('#year').textContent = new Date().getFullYear();
+    (function init(){
+      const chipsWrap = document.querySelector('.meta');
+      chipsWrap.innerHTML = (DATA.genres||[]).map(g=>`<span class="chip">${g}</span>`).join('');
 
-    $('#copyBtn').addEventListener('click', () => {
-      const genres = [...document.querySelectorAll('.chip')].map(e => e.textContent).join(', ');
-      const text = `${CONFIG.title}\n${$('#subdub').textContent}\n${$('#rating').textContent}\nGenres: ${genres}\n\n${$('#synopsis').textContent}`;
-      navigator.clipboard.writeText(text).then(() => {
-        $('#copyBtn').textContent = '✅ Copied';
-        setTimeout(() => { $('#copyBtn').textContent = '📋 Copy Page Info'; }, 1400);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('title').textContent = DATA.title;
+      document.getElementById('subdub').textContent = `${DATA.subdub} · ${(DATA.genres||[]).join(', ')}`;
+      document.getElementById('rating').innerHTML = `⭐ ${DATA.rating || '—'} <span style="opacity:.8">(${DATA.ratingSource || 'No official rating available'})</span>`;
+      document.getElementById('synopsis').textContent = DATA.synopsis;
+
+      document.getElementById('downloadBtn').href = DATA.download;
+      document.documentElement.style.setProperty('--bg', `url('${DATA.image}')`);
+
+      document.getElementById('copyBtn').addEventListener('click', async ()=>{
+        const text = `${DATA.title}\n${DATA.subdub} · ${(DATA.genres||[]).join(', ')}\n⭐ ${DATA.rating || '—'} (${DATA.ratingSource || 'No official rating available'})\nGenres: ${(DATA.genres||[]).join(', ')}\n\n${DATA.synopsis}`;
+        try {
+          await navigator.clipboard.writeText(text);
+          document.getElementById('copyBtn').textContent = '✅ Copied';
+        } catch (e) {
+          prompt('Copy the text below:', text);
+        } finally {
+          setTimeout(()=>document.getElementById('copyBtn').textContent='📋 Copy Page Info', 1400);
+        }
       });
-    });
 
-    async function fetchAniList(title) {
-      const query = `
-        query ($search: String) {
-          Media(type: ANIME, search: $search) {
-            title { romaji english native }
-            description(asHtml: true)
-            genres
-            averageScore
-            seasonYear
-          }
-        }`;
-      const res = await fetch('https://graphql.anilist.co', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query, variables: { search: title } })
-      });
-      if (!res.ok) throw new Error('AniList fetch failed');
-      const json = await res.json();
-      return json.data.Media || null;
-    }
-
-    (async () => {
-      try {
-        const data = await fetchAniList(CONFIG.title);
-        if (!data) throw 0;
-        const best = data.title.english || data.title.romaji || CONFIG.title;
-        $('#title').textContent = best;
-        $('#footerTitle').textContent = best;
-        $('#genresWrap').innerHTML = data.genres.map(g => `<span class="chip">${g}</span>`).join('');
-        $('#rating').textContent = data.averageScore
-          ? `⭐ ${data.averageScore}/100 (AniList)`
-          : '⭐ — (No official rating available)';
-        $('#synopsis').textContent = stripHTML(data.description) || 'Synopsis not available.';
-        if (data.seasonYear) $('#year').textContent = data.seasonYear;
-      } catch (e) {
-        $('#genresWrap').innerHTML = '<span class="chip">Fantasy</span><span class="chip">Adventure</span>';
-        $('#rating').innerHTML = '⭐ — <span style="opacity:.8">(No official rating available)</span>';
-        $('#synopsis').textContent = 'Details could not be fetched now.';
-        console.warn(e);
-      }
+      const ld = {
+        "@context":"https://schema.org",
+        "@type":"TVSeries",
+        "name": DATA.title,
+        "image": [DATA.image],
+        "genre": DATA.genres,
+        "description": DATA.synopsis,
+        "inLanguage": "hi",
+        "url": location.href,
+        "aggregateRating": DATA.rating && DATA.rating !== '—' ? {
+          "@type":"AggregateRating",
+          "ratingValue": String(DATA.rating).replace(/\D+$/,'').trim(),
+          "bestRating":"10",
+          "worstRating":"1",
+          "ratingCount":"1"
+        } : undefined
+      };
+      document.getElementById('ldjson').textContent = JSON.stringify(ld);
     })();
   </script>
 </body>
