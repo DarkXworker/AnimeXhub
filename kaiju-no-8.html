@@ -2,74 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaiju No. 8 – AnimeX TV</title>
-  
-  <!-- SEO -->
-  <meta name="description" content="Kaiju No. 8 – A thrilling action-horror anime about a man who becomes the very monster he fights. Sub | Dub · Action, Horror, Shōnen. Rating: Unrated."/>
-  <meta name="keywords" content="Kaiju No. 8, Kaiju, anime, download, sub, dub, action, horror, veteran, Defense Force"/>
-  <link rel="canonical" href="YOUR_CANONICAL_URL_HERE"/>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Kaiju No. 8 – AnimeX TV"/>
-  <meta property="og:description" content="A man who cleans up monsters gets the ability to turn into one himself—and it's not a gift."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="https://files.catbox.moe/zzyssy.jpg"/>
-  <meta property="og:url" content="YOUR_CANONICAL_URL_HERE"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"TVSeries",
-    "name":"Kaiju No. 8",
-    "image":["https://files.catbox.moe/zzyssy.jpg"],
-    "genre":["Action","Horror","Shōnen"],
-    "inLanguage":["Japanese","English","Hindi"],
-    "url":"YOUR_CANONICAL_URL_HERE",
-    "description":"Kafka Hibino, a sweeper cleaning kaiju corpses, unexpectedly gains the power to transform into one himself. Now he must balance his monster side while pursuing his dream to join the Defense Force.",
-    "aggregateRating":{
-      "@type":"AggregateRating",
-      "ratingValue":"—",
-      "ratingCount":"—",
-      "bestRating":"10",
-      "worstRating":"1"
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaiju No. 8 - AnimeX TV</title>
+  <meta name="description" content="Watch & download Kaiju No. 8 (Sub/Dub). Genres: Action, Sci-Fi." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:url('https://files.catbox.moe/zzyssy.jpg');
+      --brand:#66fcf1;
+      --gold:#ffd54a;
     }
-  }
-  </script>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: var(--bg) no-repeat center center/cover;
+      min-height: 100vh; display:flex; flex-direction:column; justify-content:flex-end;
+    }
+    .content { background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0)); padding: 40px 20px; text-align:center; }
+    h1 { font-size: 32px; font-weight: 600; color: var(--brand); margin-bottom: 10px; }
+    .sub-info { font-size: 14px; color: #ddd; margin-bottom: 6px; }
+    .rating { color: var(--gold); font-size: 15px; margin: 10px 0 22px; }
+    .btn-group { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:25px; }
+    .btn { padding: 12px 20px; border:none; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; transition:.25s; display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn.download { background:#ffa500; color:#000; }
+    .btn.download:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.tutorial { background:#ff4d6d; color:#fff; }
+    .btn.tutorial:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.copy { background:#2dd4bf; color:#062; }
+    .story { font-size:15px; line-height:1.65; max-width: 760px; margin:0 auto; background:rgba(0,0,0,.7); padding:20px; border-radius:12px; text-align:left; }
+    .meta { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin: 10px 0 18px; }
+    .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; font-size:12px; }
+    footer { text-align:center; color:#bbb; font-size:12px; padding:18px 0 8px; }
+    @media (max-width:600px){ h1{font-size:26px;} .story{font-size:14px;} }
+  </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Kaiju No. 8</h1>
+  <div class="content" role="main">
+    <h1 id="title">Kaiju No. 8</h1>
 
-    <div class="sub-info">📺 Sub | Dub · Action, Horror, Shōnen</div>
+    <div class="sub-info" id="subdub">📺 Sub | Dub · Action, Sci-Fi</div>
+    <div class="meta" aria-label="Genres">
+      <span class="chip">Action</span>
+      <span class="chip">Sci-Fi</span>
+    </div>
 
-    <div class="rating" aria-label="rating">⭐ Unrated</div>
+    <div class="rating" id="rating">⭐ — <span style="opacity:.8">(No official rating available)</span></div>
 
-    <div class="btn-group" role="group">
-      <a href="https://t.me/+7bxBZRrQq6liNmNl" class="btn download" rel="noopener" target="_blank">
+    <div class="btn-group">
+      <a href="https://t.me/+7bxBZRrQq6liNmNl" class="btn download" id="downloadBtn" rel="nofollow noopener">
         📂 Download All Episodes (Hindi)
       </a>
-      <a href="https://example.com/how-to-download" class="btn tutorial" rel="noopener" target="_blank">
+      <a href="https://example.com/how-to-download" class="btn tutorial" rel="nofollow noopener">
         ❓ How to Download
       </a>
+      <button class="btn copy" id="copyBtn" type="button">📋 Copy Page Info</button>
     </div>
 
-    <div class="panel">
-      <p class="story">
-        Kafka Hibino, a 32-year-old member of the cleanup squad, dreams of joining the Defense Force. Fate intervenes when he’s infected by a kaiju parasite—granting him monstrous powers. Now, Kafka must juggle becoming Kaiju No. 8 while chasing the career he’s always wanted.
-      </p>
-    </div>
-
-    <div class="facts" aria-label="quick facts">
-      <div class="fact"><b>Type:</b> TV Anime</div>
-      <div class="fact"><b>Seasons:</b> Season 1 &amp; Season 2 ongoing</div>
-      <div class="fact"><b>Studio:</b> Production I.G (Kaiju designs by Studio Khara)</div>
-      <div class="fact"><b>Aired:</b> Apr 13–Jun 29, 2024 (S1); Jul 19, 2025–Present (S2)</div>
-      <div class="fact"><b>Status:</b> Ongoing</div>
-      <div class="fact"><b>Source:</b> Manga by Naoya Matsumoto</div>
-    </div>
+    <article class="story" id="synopsis">
+      Grotesque monsters known as “kaiju” terrorize Japan, and elite teams called the Defense Corps fight to protect civilians—while cleanup crews called sweepers dispose of the aftermath.
+      
+      Kafka Hibino, a 32-year-old former kaiju enthusiast turned sweeper, has lost hope of ever joining the Corps. But when a parasite kaiju forcibly invades his body, he transforms into a powerful humanoid monster known as Kaiju No. 8. Armed with his bizarre new abilities, Kafka reignites his dream of serving in the Defense Force—and honoring a childhood promise to his friend Mina Ashiro.  
+    </article>
   </div>
+
+  <footer>
+    <span id="footerTitle">Kaiju No. 8</span> · <span id="year"></span>
+  </footer>
+
+  <script>
+    const DATA = {
+      title: 'Kaiju No. 8',
+      image: 'https://files.catbox.moe/zzyssy.jpg',
+      subdub: '📺 Sub | Dub · Action, Sci-Fi',
+      genres: ['Action','Sci-Fi'],
+      rating: '—',
+      ratingSource: 'No official rating available',
+      synopsis: `Grotesque monsters known as “kaiju” terrorize Japan... (see above)`,
+      download: 'https://t.me/+7bxBZRrQq6liNmNl',
+      tutorial: 'https://example.com/how-to-download'
+    };
+    (function init(){
+      const chipsWrap = document.querySelector('.meta');
+      if (Array.isArray(DATA.genres)) {
+        chipsWrap.innerHTML = DATA.genres.map(g=>`<span class="chip">${g}</span>`).join('');
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('copyBtn').addEventListener('click', ()=>{
+        const text = `${DATA.title}\n${DATA.subdub}\n⭐ ${DATA.rating} (${DATA.ratingSource})\nGenres: ${(DATA.genres||[]).join(', ')}\n\n${DATA.synopsis}`;
+        navigator.clipboard.writeText(text).then(()=>{
+          document.getElementById('copyBtn').textContent = '✅ Copied';
+          setTimeout(()=>document.getElementById('copyBtn').textContent='📋 Copy Page Info', 1400);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
