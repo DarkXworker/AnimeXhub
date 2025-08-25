@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Piece - AnimeX TV</title>
+  <meta name="description" content="Watch & download One Piece (Sub/Dub). Genres: Action, Adventure, Fantasy." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:url('https://files.catbox.moe/jjxeks.jpg');
+      --brand:#66fcf1;
+      --gold:#ffd54a;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: var(--bg) no-repeat center center/cover;
+      min-height: 100vh; display:flex; flex-direction:column; justify-content:flex-end;
+    }
+    .content { background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0)); padding: 40px 20px; text-align:center; }
+    h1 { font-size: 32px; font-weight: 600; color: var(--brand); margin-bottom: 10px; }
+    .sub-info { font-size: 14px; color: #ddd; margin-bottom: 6px; }
+    .rating { color: var(--gold); font-size: 15px; margin: 10px 0 22px; }
+    .btn-group { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:25px; }
+    .btn { padding: 12px 20px; border:none; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; transition:.25s; display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn.download { background:#ffa500; color:#000; }
+    .btn.download:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.tutorial { background:#ff4d6d; color:#fff; }
+    .btn.tutorial:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.copy { background:#2dd4bf; color:#062; }
+    .story { font-size:15px; line-height:1.65; max-width: 760px; margin:0 auto; background:rgba(0,0,0,.7); padding:20px; border-radius:12px; text-align:left; }
+    .meta { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin: 10px 0 18px; }
+    .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; font-size:12px; }
+    footer { text-align:center; color:#bbb; font-size:12px; padding:18px 0 8px; }
+    @media (max-width:600px){ h1{font-size:26px;} .story{font-size:14px;} }
+  </style>
+</head>
+<body>
+  <div class="content" role="main">
+    <h1 id="title">One Piece</h1>
+
+    <div class="sub-info" id="subdub">📺 Sub | Dub · Action, Adventure, Fantasy</div>
+    <div class="meta" aria-label="Genres">
+      <span class="chip">Action</span>
+      <span class="chip">Adventure</span>
+      <span class="chip">Fantasy</span>
+    </div>
+
+    <div class="rating" id="rating">⭐ 8.6 <span style="opacity:.8">(MyAnimeList)</span></div>
+
+    <div class="btn-group">
+      <a href="https://t.me/+1dWCiOKRqx44Nzk1" class="btn download" id="downloadBtn" rel="nofollow noopener">
+        📂 Download All Episodes (Hindi)
+      </a>
+      <a href="https://t.me/download_Tutorialx/77" class="btn tutorial" rel="nofollow noopener">
+        ❓ How to Download
+      </a>
+      <button class="btn copy" id="copyBtn" type="button">📋 Copy Page Info</button>
+    </div>
+
+    <article class="story" id="synopsis">
+      Gol D. Roger was known as the Pirate King, the strongest and most infamous being to have sailed the Grand Line. His execution by the World Government brought a change throughout the world—his last words revealed the existence of the greatest treasure in the world, One Piece. This revelation led to the Grand Age of Pirates, where countless pirates set sail to find the legendary treasure.
+
+      Monkey D. Luffy, a spirited young man with a body made of rubber after eating a Devil Fruit, dreams of becoming the next Pirate King. With his diverse crew, the Straw Hat Pirates, Luffy sets sail on a grand adventure across dangerous seas, mysterious islands, and epic battles against powerful foes—all in search of the fabled One Piece.
+    </article>
+  </div>
+
+  <footer>
+    <span id="footerTitle">One Piece</span> · <span id="year"></span>
+  </footer>
+
+  <script>
+    const DATA = {
+      title: 'One Piece',
+      image: 'https://files.catbox.moe/jjxeks.jpg',
+      subdub: '📺 Sub | Dub · Action, Adventure, Fantasy',
+      genres: ['Action','Adventure','Fantasy'],
+      rating: '8.6',
+      ratingSource: 'MyAnimeList',
+      synopsis: `Gol D. Roger was known as the Pirate King... (see above)`,
+      download: 'https://t.me/+1dWCiOKRqx44Nzk1',
+      tutorial: 'https://t.me/download_Tutorialx/77'
+    };
+    (function init(){
+      const chipsWrap = document.querySelector('.meta');
+      if (Array.isArray(DATA.genres)) {
+        chipsWrap.innerHTML = DATA.genres.map(g=>`<span class="chip">${g}</span>`).join('');
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('copyBtn').addEventListener('click', ()=>{
+        const text = `${DATA.title}\n${DATA.subdub}\n⭐ ${DATA.rating} (${DATA.ratingSource})\nGenres: ${(DATA.genres||[]).join(', ')}\n\n${DATA.synopsis}`;
+        navigator.clipboard.writeText(text).then(()=>{
+          document.getElementById('copyBtn').textContent = '✅ Copied';
+          setTimeout(()=>document.getElementById('copyBtn').textContent='📋 Copy Page Info', 1400);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
