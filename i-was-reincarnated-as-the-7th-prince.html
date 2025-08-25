@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:url('https://i.ibb.co/gbt1jGLH');--brand:#66fcf1;--gold:#ffd54a}
+    :root{--bg:url('https://files.catbox.moe/pu92fj.jpg');--brand:#66fcf1;--gold:#ffd54a}
     body{font-family:'Poppins',sans-serif;color:#fff;background:var(--bg) no-repeat center center/cover;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end}
     .content{background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,0));padding:40px 20px;text-align:center}
     h1{font-size:32px;font-weight:600;color:var(--brand);margin-bottom:10px}
@@ -65,7 +65,7 @@
 
     const CONFIG = {
       title: 'I Was Reincarnated as the 7th Prince so',
-      image: 'https://i.ibb.co/gbt1jGLH',
+      image: 'https://files.catbox.moe/pu92fj.jpg',
       download: 'https://t.me/+Zu4mqFjUWzQwZGNl',
       lang: '📺 Sub | Dub',
     };
@@ -132,7 +132,7 @@
 
         if (data.seasonYear) $('#year').textContent = data.seasonYear;
 
-        if (!'https://i.ibb.co/gbt1jGLH') {
+        if (!'https://files.catbox.moe/pu92fj.jpg') {
           const bg = data.bannerImage || data.coverImage?.extraLarge;
           if (bg) document.documentElement.style.setProperty('--bg', `url('${bg}')`);
         }
