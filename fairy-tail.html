@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fairy Tail - AnimeX TV</title>
+  <meta name="description" content="Watch & download Fairy Tail (Sub/Dub). Genres: Action, Adventure, Fantasy, Shounen." />
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="Fairy Tail - AnimeX TV" />
+  <meta property="og:description" content="Watch & download Fairy Tail. Genres: Action, Adventure, Fantasy, Shounen." />
+  <meta property="og:type" content="video.tv_show" />
+  <meta property="og:image" content="https://files.catbox.moe/zr4g14.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fairy Tail - AnimeX TV" />
+  <meta name="twitter:description" content="Watch & download Fairy Tail. Genres: Action, Adventure, Fantasy, Shounen." />
+  <meta name="twitter:image" content="https://files.catbox.moe/zr4g14.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:url('https://files.catbox.moe/zr4g14.jpg');
+      --brand:#66fcf1;
+      --gold:#ffd54a;
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: var(--bg) no-repeat center center/cover;
+      min-height: 100vh; display:flex; flex-direction:column; justify-content:flex-end;
+    }
+    .content { background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0)); padding: 40px 20px; text-align:center; }
+    h1 { font-size: 32px; font-weight: 600; color: var(--brand); margin-bottom: 10px; }
+    .sub-info { font-size: 14px; color: #ddd; margin-bottom: 6px; }
+    .rating { color: var(--gold); font-size: 15px; margin: 10px 0 22px; }
+    .btn-group { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-bottom:25px; }
+    .btn { padding: 12px 20px; border:none; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; transition:.25s; display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn.download { background:#ffa500; color:#000; }
+    .btn.download:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.tutorial { background:#ff4d6d; color:#fff; }
+    .btn.tutorial:hover { transform: translateY(-1px); filter:brightness(1.05); }
+    .btn.copy { background:#2dd4bf; color:#062; }
+    .story { font-size:15px; line-height:1.65; max-width: 760px; margin:0 auto; background:rgba(0,0,0,.7); padding:20px; border-radius:12px; text-align:left; }
+    .meta { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin: 10px 0 18px; }
+    .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; font-size:12px; }
+    footer { text-align:center; color:#bbb; font-size:12px; padding:18px 0 8px; }
+    @media (max-width:600px){ h1{font-size:26px;} .story{font-size:14px;} }
+  </style>
+</head>
+<body>
+  <div class="content" role="main">
+    <h1 id="title">Fairy Tail</h1>
+
+    <div class="sub-info" id="subdub">📺 Sub | Dub · Action, Adventure, Fantasy, Shounen</div>
+    <div class="meta" aria-label="Genres"></div>
+
+    <div class="rating" id="rating">⭐ 7.6/10 <span style="opacity:.8">(MyAnimeList)</span></div>
+
+    <div class="btn-group">
+      <a href="https://t.me/+hOblMJNOJhViNjY1" class="btn download" id="downloadBtn" rel="nofollow noopener">
+        📂 Download All Episodes (Hindi)
+      </a>
+      <a href="https://t.me/download_Tutorialx/77" class="btn tutorial" rel="nofollow noopener">
+        ❓ How to Download
+      </a>
+      <button class="btn copy" id="copyBtn" type="button">📋 Copy Page Info</button>
+    </div>
+
+    <article class="story" id="synopsis">
+      Set in a magical world full of guilds and sorcery, Fairy Tail follows the adventures of Natsu Dragneel—a Dragon Slayer wizard searching for his adoptive dragon father—and Lucy Heartfilia, a celestial spirit mage who joins the Fairy Tail guild. Together with their friends, they embark on thrilling quests, battle dark forces, and form bonds stronger than any magic.
+    </article>
+  </div>
+
+  <footer>
+    <span id="footerTitle">Fairy Tail</span> · <span id="year"></span>
+  </footer>
+
+  <script type="application/ld+json" id="ldjson"></script>
+
+  <script>
+    const DATA = {
+      title: 'Fairy Tail',
+      image: 'https://files.catbox.moe/zr4g14.jpg',
+      subdub: '📺 Sub | Dub',
+      genres: ["Action","Adventure","Fantasy","Shounen"],
+      rating: '7.6/10',
+      ratingSource: 'MyAnimeList',
+      synopsis: `Set in a magical world full of guilds and sorcery, Fairy Tail follows the adventures of Natsu Dragneel—a Dragon Slayer wizard searching for his adoptive dragon father—and Lucy Heartfilia, a celestial spirit mage who joins the Fairy Tail guild. Together with their friends, they embark on thrilling quests, battle dark forces, and form bonds stronger than any magic.`,
+      download: 'https://t.me/+hOblMJNOJhViNjY1',
+      tutorial: 'https://t.me/download_Tutorialx/77'
+    };
+
+    (function init(){
+      const chipsWrap = document.querySelector('.meta');
+      chipsWrap.innerHTML = (DATA.genres||[]).map(g=>`<span class="chip">${g}</span>`).join('');
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('title').textContent = DATA.title;
+      document.getElementById('subdub').textContent = `${DATA.subdub} · ${(DATA.genres||[]).join(', ')}`;
+      document.getElementById('rating').innerHTML = `⭐ ${DATA.rating || '—'} <span style="opacity:.8">(${DATA.ratingSource || 'No official rating available'})</span>`;
+      document.getElementById('synopsis').textContent = DATA.synopsis;
+
+      document.getElementById('downloadBtn').href = DATA.download;
+      document.documentElement.style.setProperty('--bg', `url('${DATA.image}')`);
+
+      document.getElementById('copyBtn').addEventListener('click', async ()=>{
+        const text = `${DATA.title}\n${DATA.subdub} · ${(DATA.genres||[]).join(', ')}\n⭐ ${DATA.rating || '—'} (${DATA.ratingSource || 'No official rating available'})\nGenres: ${(DATA.genres||[]).join(', ')}\n\n${DATA.synopsis}`;
+        try {
+          await navigator.clipboard.writeText(text);
+          document.getElementById('copyBtn').textContent = '✅ Copied';
+        } catch (e) {
+          prompt('Copy the text below:', text);
+        } finally {
+          setTimeout(()=>document.getElementById('copyBtn').textContent='📋 Copy Page Info', 1400);
+        }
+      });
+
+      const ld = {
+        "@context":"https://schema.org",
+        "@type":"TVSeries",
+        "name": DATA.title,
+        "image": [DATA.image],
+        "genre": DATA.genres,
+        "description": DATA.synopsis,
+        "inLanguage": "hi",
+        "url": location.href,
+        "aggregateRating": DATA.rating && DATA.rating !== '—' ? {
+          "@type":"AggregateRating",
+          "ratingValue": String(DATA.rating).replace(/\D+$/,'').trim(),
+          "bestRating":"10",
+          "worstRating":"1",
+          "ratingCount":"1"
+        } : undefined
+      };
+      document.getElementById('ldjson').textContent = JSON.stringify(ld);
+    })();
+  </script>
+</body>
+</html>
