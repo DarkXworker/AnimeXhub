@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>That Time I Got Reincarnated as a Slime – AnimeX TV</title>
-  <meta name="description" content="Watch & download That Time I Got Reincarnated as a Slime (Sub/Dub). Auto-filled from AniList." />
+  <meta name="description" content="Watch & download That Time I Got Reincarnated as a Slime (Sub/Dub). Auto-filled from AniList.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* styles omitted for clarity – same as previous templates */
+    /* Same styling as your previous templates */
   </style>
 </head>
 <body>
@@ -27,13 +27,73 @@
     <span id="footerTitle">That Time I Got Reincarnated as a Slime</span> · <span id="year"></span>
   </footer>
   <script>
+    const $ = s => document.querySelector(s);
+    const stripHTML = h => h.replace(/<br\s*\/?>\s*/gi, '\\n').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+
     const CONFIG = {
       title: 'That Time I Got Reincarnated as a Slime',
       image: 'https://files.catbox.moe/o08zv8.jpg_large',
       download: 'https://t.me/+SRjrFEuxP18yNmI9',
       lang: '📺 Sub | Dub',
     };
-    // rest of script remains consistent—sets title, background, fetches AniList data, etc.
+
+    document.title = CONFIG.title + ' - AnimeX TV';
+    document.documentElement.style.setProperty('--bg', `url('${CONFIG.image}')`);
+    $('#downloadBtn').href = CONFIG.download;
+    $('#subdub').textContent = CONFIG.lang + ' · Auto';
+    $('#footerTitle').textContent = CONFIG.title;
+    $('#year').textContent = new Date().getFullYear();
+
+    $('#copyBtn').addEventListener('click', () => {
+      const genres = [...document.querySelectorAll('.chip')].map(e => e.textContent).join(', ');
+      const text = `${CONFIG.title}\n${$('#subdub').textContent}\n${$('#rating').textContent}\nGenres: ${genres}\n\n${$('#synopsis').textContent}`;
+      navigator.clipboard.writeText(text).then(() => {
+        $('#copyBtn').textContent = '✅ Copied';
+        setTimeout(() => { $('#copyBtn').textContent = '📋 Copy Page Info'; }, 1400);
+      });
+    });
+
+    async function fetchAniList(title) {
+      const query = `
+        query ($search: String) {
+          Media(type: ANIME, search: $search) {
+            title { romaji english native }
+            description(asHtml: true)
+            genres
+            averageScore
+            seasonYear
+          }
+        }`;
+      const res = await fetch('https://graphql.anilist.co', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query, variables: { search: title } })
+      });
+      if (!res.ok) throw new Error('AniList fetch failed');
+      const json = await res.json();
+      return json.data.Media || null;
+    }
+
+    (async () => {
+      try {
+        const data = await fetchAniList(CONFIG.title);
+        if (!data) throw 0;
+        const best = data.title.english || data.title.romaji || CONFIG.title;
+        $('#title').textContent = best;
+        $('#footerTitle').textContent = best;
+        $('#genresWrap').innerHTML = data.genres.map(g => `<span class="chip">${g}</span>`).join('');
+        $('#rating').textContent = data.averageScore
+          ? `⭐ ${data.averageScore}/100 (AniList)`
+          : '⭐ — (No official rating available)';
+        $('#synopsis').textContent = stripHTML(data.description) || 'Synopsis not available.';
+        if (data.seasonYear) $('#year').textContent = data.seasonYear;
+      } catch (e) {
+        $('#genresWrap').innerHTML = '<span class="chip">Fantasy</span><span class="chip">Adventure</span>';
+        $('#rating').innerHTML = '⭐ — <span style="opacity:.8">(No official rating available)</span>';
+        $('#synopsis').textContent = 'Details could not be fetched now.';
+        console.warn(e);
+      }
+    })();
   </script>
 </body>
 </html>
