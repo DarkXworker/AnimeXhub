@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>I Was Reincarnated as the 7th Prince so..., AnimeX TV</title>
-  <meta name="description" content="Watch & download I Was Reincarnated as the 7th Prince so I Can Take My Time... (Sub/Dub). Auto-filled from AniList." />
-  <!-- Include same Google font and CSS as your other pages -->
+  <title>I Was Reincarnated as the 7th Prince so… – AnimeX TV</title>
+  <meta name="description" content="Watch & download I Was Reincarnated as the 7th Prince so I Can Take My Time Perfecting My Magical Ability (Sub/Dub). Auto-filled from AniList." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Your established styling here */
+    /* Same styling as your previous pages */
   </style>
 </head>
 <body>
   <div class="content" role="main">
-    <h1 id="title">I Was Reincarnated as the 7th Prince so...</h1>
+    <h1 id="title">I Was Reincarnated as the 7th Prince so…</h1>
     <div class="sub-info" id="subdub">📺 Sub | Dub · Auto</div>
     <div class="meta" id="genresWrap" aria-label="Genres"></div>
     <div class="rating" id="rating">⭐ Loading rating…</div>
@@ -24,12 +24,11 @@
     <article class="story" id="synopsis">Fetching synopsis…</article>
   </div>
   <footer>
-    <span id="footerTitle">I Was Reincarnated as the 7th Prince so...</span> · <span id="year"></span>
+    <span id="footerTitle">I Was Reincarnated as the 7th Prince so…</span> · <span id="year"></span>
   </footer>
-
   <script>
-    const $ = s => document.querySelector(s);
-    const stripHTML = h => h.replace(/<br\\s*\/?>/gi, '\\n').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+    const $ = selector => document.querySelector(selector);
+    const stripHTML = html => html.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
 
     const CONFIG = {
       title: 'I Was Reincarnated as the 7th Prince so I Can Take My Time Perfecting My Magical Ability',
@@ -47,10 +46,10 @@
 
     $('#copyBtn').addEventListener('click', () => {
       const genres = [...document.querySelectorAll('.chip')].map(e => e.textContent).join(', ');
-      const text = `${CONFIG.title}\n${$('#subdub').textContent}\n${$('#rating').textContent}\nGenres: ${genres}\n\n${$('#synopsis').textContent}`;
-      navigator.clipboard.writeText(text).then(() => {
+      const details = `${CONFIG.title}\n${$('#subdub').textContent}\n${$('#rating').textContent}\nGenres: ${genres}\n\n${$('#synopsis').textContent}`;
+      navigator.clipboard.writeText(details).then(() => {
         $('#copyBtn').textContent = '✅ Copied';
-        setTimeout(() => { $('#copyBtn').textContent = '📋 Copy Page Info'; }, 1400);
+        setTimeout(() => $('#copyBtn').textContent = '📋 Copy Page Info', 1400);
       });
     });
 
@@ -64,8 +63,7 @@
             averageScore
             seasonYear
           }
-        }
-      `;
+        }`;
       const res = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -84,16 +82,14 @@
         $('#title').textContent = best;
         $('#footerTitle').textContent = best;
         $('#genresWrap').innerHTML = data.genres.map(g => `<span class="chip">${g}</span>`).join('');
-        $('#rating').textContent = data.averageScore
-          ? `⭐ ${data.averageScore}/100 (AniList)`
-          : '⭐ — (No official rating available)';
+        $('#rating').textContent = data.averageScore ? `⭐ ${data.averageScore}/100 (AniList)` : '⭐ — (No official rating available)';
         $('#synopsis').textContent = stripHTML(data.description) || 'Synopsis not available.';
         if (data.seasonYear) $('#year').textContent = data.seasonYear;
-      } catch (e) {
+      } catch (err) {
         $('#genresWrap').innerHTML = '<span class="chip">Fantasy</span><span class="chip">Comedy</span>';
         $('#rating').innerHTML = '⭐ — <span style="opacity:.8">(No official rating available)</span>';
         $('#synopsis').textContent = 'Details could not be fetched at the moment.';
-        console.warn(e);
+        console.warn(err);
       }
     })();
   </script>
