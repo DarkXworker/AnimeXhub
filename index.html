@@ -35,6 +35,30 @@
       line-height: 1.6;
     }
 
+    /* Animation Classes */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger animations for cards */
+    .scroll-row .card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .scroll-row .card.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Header Styles */
     header {
       padding: 1rem 2rem;
@@ -601,7 +625,7 @@
   </header>
 
   <div class="container">
-    <div class="hero">
+    <div class="hero fade-in-up">
       <div class="hero-content">
         <h1 class="hero-title">Demon Slayer: Kimetsu No Yaiba</h1>
        
@@ -611,7 +635,7 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section fade-in-up">
       <div class="section-header">
         <h2 class="section-title">Most Popular Anime</h2>
        
@@ -619,7 +643,7 @@
       <div class="scroll-row" id="popular"></div>
     </div>
 
-    <div class="section">
+    <div class="section fade-in-up">
       <div class="section-header">
         <h2 class="section-title">Romantic Anime</h2>
        
@@ -627,7 +651,7 @@
       <div class="scroll-row" id="romantic"></div>
     </div>
 
-    <div class="section">
+    <div class="section fade-in-up">
       <div class="section-header">
         <h2 class="section-title">All in One</h2>
         
@@ -635,7 +659,7 @@
       <div class="scroll-row" id="aio"></div>
     </div>
 
-    <div class="section">
+    <div class="section fade-in-up">
       <div class="section-header">
         <h2 class="section-title">Adult Anime</h2>
         
@@ -643,9 +667,9 @@
       <div class="scroll-row" id="adlt"></div>
     </div>
 
-    <div class="powered">Powered by UNIQUE TEAM</div>
+    <div class="powered fade-in-up">Powered by UNIQUE TEAM</div>
 
- <footer style="text-align:center; padding: 20px; font-size: 13px; color: #777; background-color: #111;">
+ <footer class="fade-in-up" style="text-align:center; padding: 20px; font-size: 13px; color: #777; background-color: #111;">
   © <span id="year"></span> <strong>SudipX</strong>. All Rights Reserved
 </footer>
 
@@ -1265,11 +1289,50 @@
       hideAgeVerification();
       window.location = 'index.html';
     });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // For sections
+          if (entry.target.classList.contains('fade-in-up')) {
+            entry.target.classList.add('animate');
+          }
+          
+          // For cards in scroll rows
+          if (entry.target.classList.contains('scroll-row')) {
+            const cards = entry.target.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+              // Stagger the animation for a nicer effect
+              setTimeout(() => {
+                card.classList.add('animate');
+              }, index * 100); // 100ms delay between each card
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with the fade-in-up class
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Observe all scroll rows to animate their cards
+    document.querySelectorAll('.scroll-row').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Animate hero immediately on load (no need to wait for scroll)
+    setTimeout(() => {
+      document.querySelector('.hero')?.classList.add('animate');
+    }, 300);
   </script>
-
-
-<!-- 👇 Bottom Navigation (Native Style) 👇 -->
-
-
 </body>
 </html>
